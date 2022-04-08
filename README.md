@@ -1,78 +1,122 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("kuy king ", "BloodTheme")
-local Tab = Window:NewTab("Main")
-local Section = Tab:NewSection("FastAttack")
-Section:NewToggle("FastAttack", "Click to use FastAttack", function(state)
-local Fast = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-local CameraShaker = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework.CameraShaker)
-_G.Fastattack = state -- true\false
-game:GetService("RunService").RenderStepped:Connect(function()
-    pcall(function()
-        if _G.Fastattack then
-Fast.activeController.timeToNextAttack = 0
-Fast.activeController.hitboxMagnitude = 50
-game:GetService'VirtualUser':CaptureController()
-game:GetService'VirtualUser':Button1Down(Vector2.new(686, 352))
-CameraShaker.CameraShakeInstance.CameraShakeState = {FadingIn = 3, FadingOut = 2, Sustained = 0, Inactive = 1}
+local Window = Library.CreateLib("NOOB", "BloodTheme")
+
+
+
+
+local Tab = Window:NewTab("main")
+
+local Section = Tab:NewSection("fram rejoin for stop")
+Section:NewToggle("fram", "Click to use fram", function(state)
+while wait () do
+local plr = game:service"Players".LocalPlayer;
+local tween_s = game:service"TweenService";
+local info = TweenInfo.new(2,Enum.EasingStyle.Quad);
+function tp(...)
+   local tic_k = tick();
+   local params = {...};
+   local cframe = CFrame.new(params[1],params[2],params[3]);
+   local tween,err = pcall(function()
+       local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+       tween:Play();
+   end)
+   if not tween then return err end
+end
+tp(-55.1682892, 71.8159409, 1298.73474);
+
+wait (2)
+
+local plr = game:service"Players".LocalPlayer;
+local tween_s = game:service"TweenService";
+local info = TweenInfo.new(20,Enum.EasingStyle.Quad);
+function tp(...)
+   local tic_k = tick();
+   local params = {...};
+   local cframe = CFrame.new(params[1],params[2],params[3]);
+   local tween,err = pcall(function()
+       local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+       tween:Play();
+   end)
+   if not tween then return err end
+end
+tp(-89.9058228, 35.5401726, 8445.28516);
+
+wait (18)
+
+local plr = game:service"Players".LocalPlayer;
+local tween_s = game:service"TweenService";
+local info = TweenInfo.new(3,Enum.EasingStyle.Quad);
+function tp(...)
+   local tic_k = tick();
+   local params = {...};
+   local cframe = CFrame.new(params[1],params[2],params[3]);
+   local tween,err = pcall(function()
+       local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+       tween:Play();
+   end)
+   if not tween then return err end
+end
+tp(-75.2286987, 45.7501411, 9307.02344);
+
+wait (3)
+
+local plr = game:service"Players".LocalPlayer;
+local tween_s = game:service"TweenService";
+local info = TweenInfo.new(8,Enum.EasingStyle.Quad);
+function tp(...)
+   local tic_k = tick();
+   local params = {...};
+   local cframe = CFrame.new(params[1],params[2],params[3]);
+   local tween,err = pcall(function()
+       local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+       tween:Play();
+   end)
+   if not tween then return err end
+end
+tp(-54.9039154, -360.700012, 9523.64551);
+
+wait (2)
+
+local plr = game:service"Players".LocalPlayer;
+local tween_s = game:service"TweenService";
+local info = TweenInfo.new(2,Enum.EasingStyle.Quad);
+function tp(...)
+   local tic_k = tick();
+   local params = {...};
+   local cframe = CFrame.new(params[1],params[2],params[3]);
+   local tween,err = pcall(function()
+       local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+       tween:Play();
+   end)
+   if not tween then return err end
+end
+tp(-51.9489594, -345.982483, 9497.56055);
+
+wait (7)
 end
 end)
+
+local Section = Tab:NewSection("fram rejoin for stop")
+Section:NewButton("rejoin", "ButtonInfo", function()
+local ts = game:GetService("TeleportService")
+
+local p = game:GetService("Players").LocalPlayer
+
+ 
+
+ts:Teleport(game.PlaceId, p)
 end)
-end)
-Section:NewLabel("Bringmob")
-Section:NewToggle("bringmob", "Click to use bringmob", function(state)
-_G.bringmob = state
-while _G.bringmob do wait()
-    pcall(function()
-for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-for x,y in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-if v.Name == "Cookie Crafter [Lv. 2200]" then
-    if y.Name == "Cookie Crafter [Lv. 2200]" then
-   v.HumanoidRootPart.CFrame = y.HumanoidRootPart.CFrame
-   v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-   y.HumanoidRootPart.Size = Vector3.new(60,60,60)
-   v.HumanoidRootPart.Transparency = 1
-   v.HumanoidRootPart.CanCollide = false
-   y.HumanoidRootPart.CanCollide = false
-   v.Humanoid.WalkSpeed = 0
-   y.Humanoid.WalkSpeed = 0
-   v.Humanoid.JumpPower = 0
-   y.Humanoid.JumpPower = 0
-   if sethiddenproperty then
-     sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-end
-end
-end
-end
-end
-end)
-end
-end)
-Section:NewLabel("brind")
-Section:NewToggle("", "Click to use bringmob", function(state)
-_G.bringmob = state
-while _G.bringmob do wait()
-    pcall(function()
-for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-for x,y in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-if v.Name == "Cookie Crafter [Lv. 2200]" then
-    if y.Name == "Cookie Crafter [Lv. 2200]" then
-   v.HumanoidRootPart.CFrame = y.HumanoidRootPart.CFrame
-   v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-   y.HumanoidRootPart.Size = Vector3.new(60,60,60)
-   v.HumanoidRootPart.Transparency = 1
-   v.HumanoidRootPart.CanCollide = false
-   y.HumanoidRootPart.CanCollide = false
-   v.Humanoid.WalkSpeed = 0
-   y.Humanoid.WalkSpeed = 0
-   v.Humanoid.JumpPower = 0
-   y.Humanoid.JumpPower = 0
-   if sethiddenproperty then
-     sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-end
-end
-end
-end
-end
-end)
-end
+
+
+local Tab = Window:NewTab("TabName")
+
+
+
+
+local Tab = Window:NewTab("CREDIT")
+local Section = Tab:NewSection("NUY GOD")
+
+
+Section:NewKeybind("OFF UI", "KeybindInfo", Enum.KeyCode.RightControl, function()
+	Library:ToggleUI()
 end)
