@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("NOOB", "BloodTheme")
+local Window = Library.CreateLib("KUY PH*M", "BloodTheme")
 
 
 
@@ -108,11 +108,25 @@ ts:Teleport(game.PlaceId, p)
 end)
 
 
-local Tab = Window:NewTab("TabName")
+local Tab = Window:NewTab("misc")
 
+local Section = Tab:NewSection("inf jump")
+Section:NewToggle("on", "Click to use fram", function(state)
+local UIS = game:GetService("UserInputService")
+local lp = game.Players.LocalPlayer
+local c = lp.Character
 
-
-
+UIS.InputBegan:connect(function(input, processed)
+c.Humanoid.JumpPower = 50 -- sets the JumpPower from 0 to 50 (default JumpPower)
+if processed then return end
+if input.KeyCode == Enum.KeyCode.Space then -- if the space key is pressed
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)  -- Humanoid.Jump = true does not work, so I used changestate
+end
+end)
+end)
+local Section = Tab:NewSection("inf jump")
+Section:NewToggle("on", "Click to use fram", function(state)
+end)
 local Tab = Window:NewTab("CREDIT")
 local Section = Tab:NewSection("NUY GOD")
 
